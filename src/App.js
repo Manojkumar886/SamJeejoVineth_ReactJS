@@ -1,23 +1,19 @@
-import SampleFour, { SampleThree, Sampleone, Sampletwo } from "./BasicComponents";
-import { BootstrapExecution } from "./ExecuteBootstrap";
-import { ExampleofParameters } from "./FuncwithArguments";
-import { Firsthookexecution } from "./HooksUSESTATE";
-import { StudentDetails } from "./TableCreationWithCSS";
-import { Operator } from "./TernaryOPeratorusingUSESTATE";
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Homepage } from './MainPage';
+import { StudentDetails } from './TableCreationWithCSS';
+import { BootstrapExecution } from './ExecuteBootstrap';
 
 function App()
 {
   return(
     <>
-    <Operator/>
-    {/* <Firsthookexecution/> */}
-    {/* <SampleThree/>
-    <Sampleone/>
-    <Sampletwo/>
-    <SampleFour/> */}
-    {/* <StudentDetails/> */}
-    {/* <BootstrapExecution/> */}
-    {/* <ExampleofParameters location='./relax.webp' vertical='600px' Horizontal='900px' /> */}
+    <BrowserRouter>
+     <Homepage/>
+      <Routes>
+        <Route path="homepage" exact element={<StudentDetails/>}/>
+        <Route path='printall' exact element={<BootstrapExecution/>}/>
+      </Routes>
+    </BrowserRouter>  
     </>
   )
 }
