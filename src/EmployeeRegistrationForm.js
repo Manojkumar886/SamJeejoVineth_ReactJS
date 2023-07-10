@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from 'react'
+import { create } from './TemporaryValues'
 
 export const RegistrationForm=()=>
 {
@@ -30,6 +31,7 @@ export const RegistrationForm=()=>
     const Register=()=>
     {
         alert(" welcome to zealous Tech corp"+JSON.stringify(userdetail))
+        create(userdetail);
     }
 
     const Cancel=()=>

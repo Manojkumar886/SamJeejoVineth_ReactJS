@@ -37,3 +37,8 @@ export const list=()=>
 {
     return MyemployeeDetails;
 }
+
+export const read=(index)=>
+{
+    return MyemployeeDetails[index]; //Myemployeedetails[2];
+}
