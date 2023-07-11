@@ -1,8 +1,9 @@
  import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
-import { list } from './TemporaryValues';
+import { fetchexact, list } from './TemporaryValues';
 import { RegistrationForm } from './EmployeeRegistrationForm';
 import { ReadingaEmployeedetail } from './ReadinganPage';
+import { Updating } from './UpdatingPage';
 
 
 export const Homepage1=()=>
@@ -11,6 +12,8 @@ export const Homepage1=()=>
     const [createview,setCreateview]=useState(false);
     const [readview,setReadview]=useState(false);
     const [pos,setPos]=useState(0);
+    const [updateview,setUpdateview]=useState(false);
+    const [obj,setObj]=useState({});
 
     const setavalue=()=>
     {
@@ -53,6 +56,21 @@ export const Homepage1=()=>
                 }
                 >
                     back
+                </button>
+                </>
+                :
+                (updateview)?
+                <>
+                <Updating who={pos} mention={obj} />
+                <button className='btn btn-outline-secondary '
+                onClick={
+                    ()=>
+                    {
+                        setUpdateview(false)
+                    }
+                }
+                >
+                    Back
                 </button>
                 </>
                 :
@@ -100,10 +118,24 @@ export const Homepage1=()=>
                                             {
                                                 setReadview(true)
                                                 setPos(index)
+
                                             }
                                         }
                                         >
                                             Read
+                                        </button>
+                                        <button className='btn btn-outline-info'
+                                        onClick={
+                                            ()=>
+                                            {
+                                                setUpdateview(true)
+                                                setPos(index)
+                                                const temp=fetchexact(ele.empname);
+                                                setObj(temp);
+                                            }
+                                        }
+                                        >
+                                            Edit
                                         </button>
                                     </td>
                                 </tr>

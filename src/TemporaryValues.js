@@ -42,3 +42,18 @@ export const read=(index)=>
 {
     return MyemployeeDetails[index]; //Myemployeedetails[2];
 }
+
+export  const fetchexact=(name)=>
+{
+    const temp=MyemployeeDetails.filter((element)=>
+    {
+        return element.empname=name;
+    })
+
+    return temp[0];
+}
+
+export const alteration=(ele,index)=>
+{
+ MyemployeeDetails[index]=ele;
+}
