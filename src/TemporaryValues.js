@@ -47,7 +47,7 @@ export  const fetchexact=(name)=>
 {
     const temp=MyemployeeDetails.filter((element)=>
     {
-        return element.empname=name;
+        return element.empname===name;
     })
 
     return temp[0];
