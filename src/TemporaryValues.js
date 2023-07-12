@@ -57,3 +57,24 @@ export const alteration=(ele,index)=>
 {
  MyemployeeDetails[index]=ele;
 }
+
+export const deleting=(index)=>
+{
+    var yesno=prompt(" are you sure your values is deleted");
+    if(yesno==='yes')
+    {
+        MyemployeeDetails=MyemployeeDetails.filter((ele,ind)=>
+        { 
+            return ind!==index;
+        })
+        return MyemployeeDetails;
+    }
+    else if(yesno==='no')
+    {
+        alert('your value is not deleted')
+        return MyemployeeDetails;
+    }
+    else{
+        alert("  your values is not deleted")
+    }
+}

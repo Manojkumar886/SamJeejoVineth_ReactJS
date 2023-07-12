@@ -1,6 +1,6 @@
  import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
-import { fetchexact, list } from './TemporaryValues';
+import { deleting, fetchexact, list } from './TemporaryValues';
 import { RegistrationForm } from './EmployeeRegistrationForm';
 import { ReadingaEmployeedetail } from './ReadinganPage';
 import { Updating } from './UpdatingPage';
@@ -79,6 +79,7 @@ export const Homepage1=()=>
                 onClick={
                     ()=>
                     {
+                        
                         setCreateview(true)
                     }
                 }
@@ -136,6 +137,15 @@ export const Homepage1=()=>
                                         }
                                         >
                                             Edit
+                                        </button>
+                                        <button className='btn btn-outline-danger'
+                                        onClick={()=>
+                                        {
+                                            
+                                            setTemparray(deleting(index))
+                                        }}
+                                        >
+                                            Remove
                                         </button>
                                     </td>
                                 </tr>
